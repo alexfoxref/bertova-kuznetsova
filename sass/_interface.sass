@@ -1,0 +1,187 @@
+html
+    font-size: 10px
+body
+    +light
+    color: $black
+img
+    max-width: 100%
+button, input, textarea, a
+    &:focus
+        outline: none
+ul
+    padding-left: 0
+li
+    list-style: none
+a
+    text-decoration: none
+    &:hover
+        cursor: pointer
+button
+    border: none
+    &:hover
+        cursor: pointer
+.btn
+    &__primary
+        padding: 25px
+        text-align: center
+        +light
+        box-shadow: inset 0 0 3px #f5c06b
+        background-color: #2e3032
+        background-image: linear-gradient(to top, #ce963d 0%, #f5c06b 100%)
+        border-radius: 10px
+        color: $white
+        font-size: 1.7rem
+        line-height: 22px
+        text-transform: uppercase
+        text-shadow: 1px 2px 2px rgba(93, 64, 18, 0.47)
+        position: relative
+        &:after
+            content: ''
+            z-index: -10
+            position: absolute
+            display: none
+            top: 10px
+            left: 10px
+            width: calc(100% - 20px)
+            height: 100%
+            box-shadow: inset 0 0 3px #f5c06b
+            border-radius: 8px
+            background-color: #2e3032
+            background-image: linear-gradient(to top, #ce963d 0%, #f5c06b 100%)
+            opacity: 0.2
+        &_mirror
+            &:after
+                display: block
+    &__fb
+        font-size: 18px
+        border-radius: 3px
+        &:before
+            font-size: 22px
+    &__insta
+        font-size: 28px
+.side-title
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    min-width: 150px
+    min-height: 100%
+    font-size: 1.4rem
+    position: relative
+    z-index: 10
+    text-align: right
+    &__text
+        position: absolute
+        right: 65px
+        transform: translateX(50%) rotate(-90deg)
+        white-space: nowrap
+        color: $secondary-text
+        margin: 0
+        &:hover
+            cursor: pointer
+    &__btn
+        margin-right: 20px
+        padding: 0
+        width: 18px
+        height: 30px
+        background-color: transparent
+        border: 2px solid $secondary-text
+        border-radius: 9px
+        position: relative
+        &:after
+            content: ''
+            display: block
+            background-color: $secondary-text
+            width: 4px
+            height: 8px
+            border-radius: 2px
+            position: absolute
+            top: 5px
+            left: 5px
+        &:active
+            &:after
+                transform: translateY(8px)
+                transition: .1s
+    &_white
+        .side-title
+            &__text
+                color: $white
+            &__btn
+                border: 2px solid $white
+                &:after
+                    background-color: $white
+.content
+    margin-right: 150px
+    width: 100%
+    max-height: 100%
+    z-index: 10
+    &__title
+        padding-top: 40px
+        font-size: 3rem
+        text-align: center
+        +bold
+.subtitle
+    font-size: 14px
+
+@media (max-width: 1365px)
+    .content
+        margin-right: 100px
+    .side-title
+        min-width: 100px
+@media (max-width: 1200px)
+    .content
+        margin-right: 20px
+    .side-title
+        min-width: 65px
+        &__text
+            right: 45px
+        &__btn
+            margin-right: 10px
+@media (max-width: 991px)
+    html
+        font-size: 8px
+    .subtitle
+        font-size: 12px
+        margin-top: 10px
+@media (max-width: 767px)
+    .side-title
+        display: none
+    .content
+        margin-left: 20px
+@media (max-width: 563px)
+    html
+        font-size: 7px
+    .content
+        margin: 0
+        padding: 0 10px
+        &__title
+            font-size: 16px
+            margin-top: 30px
+            padding: 0
+    .team
+        .content
+            padding: 0
+    .blog
+        .content
+            padding: 0
+    .consult
+        .content
+            padding: 0 35px
+    .about
+        .content
+            padding: 0 20px
+
+
+// .section
+//     &_color
+//         width: 100%
+//     &_white
+//         width: 100%
+// .section
+//     padding: 100px 0
+//     &-title
+//         font-size: 30px
+//         +bold
+//         text-align: center
+//         text-transform: uppercase
+//         margin-top: 0
+//         margin-bottom: 100px

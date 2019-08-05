@@ -1,0 +1,75 @@
+.hero
+    &__bg
+        position: absolute
+        top: 1px
+        left: 0
+        overflow: hidden
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        &-notext
+            display: none
+            min-width: 1440px
+            min-height: 100%
+        &-text
+            display: none
+            position: absolute
+        &-img
+            margin-top: -70px
+            min-width: 1440px
+            min-height: 100%
+        &-min
+            display: none
+            position: absolute
+    &__btn
+        position: absolute
+        top: 415px
+        left: 250px
+
+@media (max-width: 1365px)
+    .hero
+        &__bg
+            &-img
+                margin-left: 50px
+@media (max-width: 1199px)
+    .hero
+        &__bg
+            &-img
+                min-width: 1200px
+                min-height: 620px
+                margin-left: 0
+@media (max-width: 991px)
+    .hero
+        &__bg
+            &-img
+                display: none
+            &-notext
+                display: block
+                margin-top: -30px
+                min-width: 1000px
+                min-height: 500px
+        &__btn
+            top: auto
+            left: 170px
+            bottom: 70px
+@media (max-width: 767px)
+    .hero
+        &__btn
+            left: 30px
+@media (max-width: 380px)
+    .hero
+        &__bg
+            &-notext
+                display: none
+            &-min
+                display: block
+                min-width: 565px
+                margin-top: -70px
+                margin-left: -60px
+        &__btn
+            left: 20px
+            right: 20px
+            bottom: 0
+            padding: 15px 10px

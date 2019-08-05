@@ -1,0 +1,85 @@
+.consult
+    background-color: #fdfdfd
+    position: relative
+    &__bg
+        position: absolute
+        z-index: 6
+        top: 1px
+        left: 0
+        overflow: hidden
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        &-img
+            min-width: 1440px
+            min-height: 100%
+    .content
+        z-index: 10
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__form
+        margin-top: 90px
+        margin-bottom: 100px
+        max-width: 100%
+        &-group
+            display: block
+            width: 380px
+            max-width: 100%
+            height: 30px
+            margin-top: 20px
+            position: relative
+            img
+                position: absolute
+                bottom: 5px
+                right: 10px
+    &__input
+        padding: 0
+        background-color: transparent
+        color: $black
+        font-size: 1.4rem
+        border: none
+        border-bottom: 1px solid $white
+        +light
+        width: 100%
+        height: 100%
+        &:placeholder
+            color: $black
+    &__btn
+        margin-bottom: 120px
+    small
+        font-size: 1.3rem
+        a
+            color: #d19940
+            text-decoration: underline
+
+@media (max-width: 1199px)
+    .consult
+        &__form
+            margin-top: 50px
+            margin-bottom: 50px
+@media (max-width: 1199px)
+    .consult
+        &__bg
+            &-img
+                min-width: 1200px
+@media (max-width: 991px)
+    .consult
+        &__btn
+            margin-bottom: 40px
+@media (max-width: 767px)
+    .consult
+        &__form
+            margin-top: 20px
+            margin-bottom: 20px
+@media (max-width: 563px)
+    .consult
+        &__btn
+            padding: 15px 25px
+        small
+            font-size: 13px
+            text-align: center
+        &__input
+            font-size: 14px

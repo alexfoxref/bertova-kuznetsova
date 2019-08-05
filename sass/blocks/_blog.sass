@@ -1,0 +1,55 @@
+.blog
+    .container
+        &-lined
+            &:after
+                z-index: 7
+    &__subtitle
+        text-align: center
+        margin-top: -20px
+        font-size: 14px
+        line-height: 20px
+        margin-bottom: 30px
+    &__blocks
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__block
+        height: 365px
+        margin-bottom: 70px
+        flex-basis: 32%
+        position: relative
+        &-title
+            color: $secondary-text
+            font-size: 1.6rem
+            text-transform: uppercase
+            margin-top: 15px
+            margin-bottom: 0
+            +bold
+        &-text
+            position: absolute
+            bottom: 0
+            left: 0
+            font-size: 1.4rem
+            line-height: 20px
+
+@media (max-width: 991px)
+    .blog
+        &__block
+            flex-basis: 45%
+        &__subtitle
+            font-size: 12px
+            margin-top: 10px
+@media (max-width: 563px)
+    .blog
+        &__subtitle
+            padding: 0 40px
+        &__blocks
+            margin-bottom: 30px
+        &__block
+            max-height: 320px
+            flex-basis: 100%
+            margin: 0
+            &-title
+                padding: 0 15px
+            &-text
+                padding: 0 15px
