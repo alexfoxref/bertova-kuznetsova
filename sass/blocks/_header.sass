@@ -38,6 +38,10 @@
             display: flex
             align-items: center
             &-icon
+                width: 15px
+                height: 15px
+                fill: $black
+                background-color: transparent
                 margin-right: 10px
         &__phone
             font-size: 1.6rem
@@ -46,15 +50,12 @@
             display: flex
             align-items: center
         &__fb
-            color: $white
-            background-color: $black
             &:hover
-                background-color: $secondary-text
+                fill: $secondary-text
         &__insta
             margin-left: 2px
-            color: $black
             &:hover
-                color: $secondary-text
+                fill: $secondary-text
     &__menu
         flex-basis: 100%
         display: flex
