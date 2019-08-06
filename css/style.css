@@ -165,9 +165,6 @@
   .container__footer {
     width: 560px;
   }
-}
-
-@media (max-width: 380px) {
   .container__about:before {
     background-color: rgba(0, 0, 0, 0.2);
   }
@@ -775,7 +772,7 @@ button:hover {
 }
 
 .hero__bg-notext {
-  display: none;
+  margin-top: -70px;
   min-width: 1440px;
   min-height: 100%;
 }
@@ -786,6 +783,7 @@ button:hover {
 }
 
 .hero__bg-img {
+  display: none;
   margin-top: -70px;
   min-width: 1440px;
   min-height: 100%;
@@ -800,6 +798,36 @@ button:hover {
   position: absolute;
   top: 415px;
   left: 250px;
+}
+
+.hero__text {
+  color: #ffffff;
+  position: absolute;
+  left: 200px;
+  top: 180px;
+  text-shadow: 0 2px 9px rgba(12, 40, 80, 0.85);
+  font-family: 'B 52' serif;
+  font-weight: 400;
+}
+
+.hero__text-title {
+  font-size: 6.0rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+}
+
+.hero__text-title span {
+  font-size: 6.7rem;
+  letter-spacing: -1.68px;
+}
+
+.hero__text-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
 }
 
 @media (max-width: 1365px) {
@@ -831,11 +859,55 @@ button:hover {
     left: 170px;
     bottom: 70px;
   }
+  .hero__text {
+    top: auto;
+    left: 120px;
+    bottom: 170px;
+  }
 }
 
 @media (max-width: 767px) {
   .hero__btn {
     left: 30px;
+  }
+  .hero__bg-notext {
+    margin-left: -70px;
+  }
+  .hero__text {
+    left: 20px;
+  }
+  .hero__text-title {
+    font-size: 5rem;
+  }
+  .hero__text-title span {
+    font-size: 5.5rem;
+  }
+}
+
+@media (max-width: 563px) {
+  .hero__bg-notext {
+    margin-left: -250px;
+  }
+  .hero__text {
+    color: #183762;
+    text-shadow: none;
+    bottom: auto;
+    top: 410px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .hero__text-title {
+    font-size: 30px;
+  }
+  .hero__text-title span {
+    font-size: 33px;
+  }
+  .hero__btn {
+    left: 20px;
+    right: 20px;
+    bottom: -200px;
+    padding: 15px 10px;
   }
 }
 
@@ -849,11 +921,11 @@ button:hover {
     margin-top: -70px;
     margin-left: -60px;
   }
+  .hero__text {
+    top: 210px;
+  }
   .hero__btn {
-    left: 20px;
-    right: 20px;
     bottom: 0;
-    padding: 15px 10px;
   }
 }
 
@@ -926,6 +998,9 @@ button:hover {
 }
 
 @media (max-width: 563px) {
+  .about {
+    margin-top: 250px;
+  }
   .about__subtitle {
     margin-top: 25px;
     margin-bottom: 35px;
@@ -1271,7 +1346,7 @@ button:hover {
 }
 
 .blog__block {
-  height: 365px;
+  min-height: 365px;
   margin-bottom: 70px;
   -ms-flex-preferred-size: 32%;
       flex-basis: 32%;
@@ -1289,9 +1364,7 @@ button:hover {
 }
 
 .blog__block-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin-top: 35px;
   font-size: 1.4rem;
   line-height: 20px;
 }
@@ -1315,26 +1388,20 @@ button:hover {
     margin-bottom: 30px;
   }
   .blog__block {
-    max-height: 320px;
+    min-height: 320px;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin: 0;
   }
   .blog__block img {
-    margin-left: 20px;
+    width: 100%;
   }
   .blog__block-title {
     padding: 0 15px;
   }
   .blog__block-text {
     padding: 0 15px;
-  }
-}
-
-@media (max-width: 380px) {
-  .blog__block img {
-    margin-left: 0;
-    width: 100%;
+    margin-top: 20px;
   }
 }
 
@@ -1435,8 +1502,8 @@ button:hover {
     margin-bottom: 20px;
   }
   .team__block {
-    margin: 0;
-    margin-left: 20px;
+    max-width: 350px;
+    margin: 0 auto;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     -webkit-box-orient: vertical;
@@ -1446,14 +1513,16 @@ button:hover {
     margin-bottom: 20px;
   }
   .team__block-img {
-    width: 320px;
+    max-width: 350px;
+    margin: 0 auto;
   }
   .team__text {
     margin: 0;
     padding: 0 25px;
   }
   .team__text-title {
-    padding-left: 225px;
+    padding-right: 20px;
+    text-align: right;
     margin-top: -35px;
     margin-bottom: 35px;
   }
@@ -1461,9 +1530,15 @@ button:hover {
     color: #ffffff;
   }
   .team__btn {
-    top: 220px;
+    top: 245px;
     left: auto;
-    right: 15px;
+    right: 30px;
+    width: 225px;
+    padding-left: 0;
+    padding-right: 15px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .team__subtitle {
     font-size: 12px;

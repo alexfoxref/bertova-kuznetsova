@@ -10,13 +10,14 @@
         justify-content: center
         align-items: flex-start
         &-notext
-            display: none
+            margin-top: -70px
             min-width: 1440px
             min-height: 100%
         &-text
             display: none
             position: absolute
         &-img
+            display: none
             margin-top: -70px
             min-width: 1440px
             min-height: 100%
@@ -27,6 +28,26 @@
         position: absolute
         top: 415px
         left: 250px
+    &__text
+        color: $white
+        position: absolute
+        left: 200px
+        top: 180px
+        text-shadow: 0 2px 9px rgba(12, 40, 80, 0.85)
+        +title
+        &-title
+            font-size: 6.0rem
+            line-height: 1
+            text-transform: uppercase
+            letter-spacing: -1.5px
+            margin-bottom: 10px
+            span
+                font-size: 6.7rem
+                letter-spacing: -1.68px
+        &-subtitle
+            +bold
+            font-size: 1.8rem
+            margin: 0
 
 @media (max-width: 1365px)
     .hero
@@ -54,10 +75,45 @@
             top: auto
             left: 170px
             bottom: 70px
+        &__text
+            top: auto
+            left: 120px
+            bottom: 170px
 @media (max-width: 767px)
     .hero
         &__btn
             left: 30px
+        &__bg
+            &-notext
+                margin-left: -70px
+        &__text
+            left: 20px
+            &-title
+                font-size: 5rem
+                span
+                    font-size: 5.5rem
+@media (max-width: 563px)
+    .hero
+        &__bg
+            &-notext
+                margin-left: -250px
+        &__text
+            color: $title-color
+            text-shadow: none
+            bottom: auto
+            top: 410px
+            left: 0
+            right: 0
+            text-align: center
+            &-title
+                font-size: 30px
+                span
+                    font-size: 33px
+        &__btn
+            left: 20px
+            right: 20px
+            bottom: -200px
+            padding: 15px 10px
 @media (max-width: 380px)
     .hero
         &__bg
@@ -68,8 +124,7 @@
                 min-width: 565px
                 margin-top: -70px
                 margin-left: -60px
+        &__text
+            top: 210px
         &__btn
-            left: 20px
-            right: 20px
             bottom: 0
-            padding: 15px 10px

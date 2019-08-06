@@ -14,7 +14,7 @@
         justify-content: space-between
         flex-wrap: wrap
     &__block
-        height: 365px
+        min-height: 365px
         margin-bottom: 70px
         flex-basis: 32%
         position: relative
@@ -26,9 +26,7 @@
             margin-bottom: 0
             +bold
         &-text
-            position: absolute
-            bottom: 0
-            left: 0
+            margin-top: 35px
             font-size: 1.4rem
             line-height: 20px
 
@@ -46,18 +44,19 @@
         &__blocks
             margin-bottom: 30px
         &__block
-            max-height: 320px
+            min-height: 320px
             flex-basis: 100%
             margin: 0
             img
-                margin-left: 20px
+                width: 100%
             &-title
                 padding: 0 15px
             &-text
                 padding: 0 15px
-@media (max-width: 380px)
-    .blog
-        &__block
-            img
-                margin-left: 0
-                width: 100%
+                margin-top: 20px
+// @media (max-width: 380px)
+//     .blog
+//         &__block
+//             img
+//                 margin-left: 0
+//                 width: 100%
