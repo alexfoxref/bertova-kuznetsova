@@ -58,10 +58,11 @@
                 fill: $secondary-text
     &__menu
         flex-basis: 100%
-        display: flex
         justify-content: center
         margin-top: 10px
         display: none
+        &_active
+            display: flex
         &-btn
             width: 23px
             height: 23px
@@ -122,6 +123,8 @@
             background-color: $white
             min-width: 100%
             z-index: 100
+            &_active
+                display: flex
             &-btn
                 display: flex
 @media (max-width: 576px)
@@ -144,4 +147,6 @@
                 flex-direction: column
                 li
                     margin-bottom: 10px
+                    margin-right: 0
+                    text-align: center
                 

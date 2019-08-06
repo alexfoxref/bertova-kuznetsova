@@ -556,14 +556,17 @@ button:hover {
 .header__menu {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 10px;
   display: none;
+}
+
+.header__menu_active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header__menu-btn {
@@ -670,6 +673,11 @@ button:hover {
     min-width: 100%;
     z-index: 100;
   }
+  .header__menu_active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .header__menu-btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -703,6 +711,8 @@ button:hover {
   }
   .header__menu-list li {
     margin-bottom: 10px;
+    margin-right: 0;
+    text-align: center;
   }
 }
 
@@ -1489,7 +1499,7 @@ button:hover {
     margin-right: auto;
   }
   .team__block-img {
-    max-width: 350px;
+    width: 100%;
     margin: 0 auto;
   }
   .team__text {
