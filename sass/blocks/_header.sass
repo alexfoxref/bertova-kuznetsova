@@ -1,5 +1,5 @@
 .header
-    height: 90px
+    min-height: 90px
     width: 100%
     max-width: 1440px
     margin: 0 auto
@@ -59,6 +59,7 @@
         flex-basis: 100%
         display: flex
         justify-content: center
+        margin-top: 10px
         display: none
         &-btn
             width: 23px
@@ -79,7 +80,7 @@
                 margin-bottom: 0
         &-list
             display: flex
-            margin-bottom: 20px
+            margin: 10px
             li
                 margin-right: 30px
                 &:last-child
@@ -103,14 +104,14 @@
 
 @media (max-width: 1199px)
     .header
-        height: 120px
+        min-height: 120px
         &-nav
             display: none
         &__menu
             display: flex
 @media (max-width: 767px)
     .header
-        height: 60px
+        min-height: 60px
         &-contacts
             max-width: 140px
             &__social-block
@@ -135,6 +136,11 @@
                     margin-right: 5px
                     max-width: 10px
                     max-height: 10px
+@media (max-width: 380px)
+    .header
         &__menu
-            &-btn
+            &-list
+                flex-direction: column
+                li
+                    margin-bottom: 10px
                 
