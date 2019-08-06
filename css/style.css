@@ -1320,11 +1320,21 @@ button:hover {
         flex-basis: 100%;
     margin: 0;
   }
+  .blog__block img {
+    margin-left: 20px;
+  }
   .blog__block-title {
     padding: 0 15px;
   }
   .blog__block-text {
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .blog__block img {
+    margin-left: 0;
+    width: 100%;
   }
 }
 
