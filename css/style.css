@@ -65,7 +65,8 @@
 }
 
 .container__header {
-  padding: 20px 180px;
+  min-width: 100%;
+  padding: 0 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +110,7 @@
 
 @media (max-width: 1400px) {
   .container__header {
-    padding: 20px 70px;
+    padding: 0 70px;
   }
 }
 
@@ -130,7 +131,7 @@
 
 @media (max-width: 991px) {
   .container__header {
-    padding: 20px 30px;
+    padding: 0 30px;
   }
   .container__hero {
     max-height: 450px;
@@ -148,7 +149,7 @@
 
 @media (max-width: 767px) {
   .container__header {
-    padding: 20px 5px;
+    padding: 0 5px;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -170,12 +171,6 @@
   .container__about:after {
     border-top: 2px solid rgba(0, 0, 0, 0.2);
     border-left: 2px solid rgba(0, 0, 0, 0.2);
-  }
-}
-
-@media (max-width: 480px) {
-  .container__header {
-    padding: 0px 5px;
   }
 }
 
@@ -452,8 +447,16 @@ button:hover {
 
 .header {
   min-height: 90px;
+  padding-top: 7px;
   width: 100%;
   max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__logo {
@@ -535,6 +538,11 @@ button:hover {
 .header-contacts__phone {
   font-size: 1.6rem;
   line-height: 10px;
+  margin: 0;
+}
+
+.header-contacts__phone:first-child {
+  margin-bottom: 10px;
 }
 
 .header-contacts__social-block {
@@ -665,6 +673,7 @@ button:hover {
 @media (max-width: 767px) {
   .header {
     min-height: 60px;
+    padding-top: 3px;
   }
   .header-contacts {
     max-width: 140px;

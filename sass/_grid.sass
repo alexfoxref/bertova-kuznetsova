@@ -45,7 +45,8 @@
                 border-left: 2px solid rgba(0,0,0,0.2)
                 background-color: #fdfdfd
     &__header
-        padding: 20px 180px
+        min-width: 100%
+        padding: 0 180px
         display: flex
         align-items: center
         justify-content: space-between
@@ -67,7 +68,7 @@
 @media (max-width: 1400px)
     .container
         &__header
-            padding: 20px 70px
+            padding: 0 70px
 @media (max-width: 1199px)
     .container
         &__hero
@@ -81,7 +82,7 @@
 @media (max-width: 991px)
     .container
         &__header
-            padding: 20px 30px
+            padding: 0 30px
         &__hero
             max-height: 450px
         &__consult
@@ -93,7 +94,7 @@
 @media (max-width: 767px)
     .container
         &__header
-            padding: 20px 5px
+            padding: 0 5px
             justify-content: space-around
         &__hero
             max-height: 400px
@@ -109,7 +110,3 @@
             &:after
                 border-top: 2px solid rgba(0,0,0,0.2)
                 border-left: 2px solid rgba(0,0,0,0.2)
-@media (max-width: 480px)
-    .container
-        &__header
-            padding: 0px 5px
