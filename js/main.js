@@ -1,12 +1,17 @@
-$(document).ready(function() {
+$(document).ready( () => {
     
     // Выпадающие меню
-    var menuBtn = $('.header__menu-btn');
-    var menu = $('.header__menu');
+    const menuBtn = $('.header__menu-btn'),
+        menu = $('.header__menu');
 
-    menuBtn.on('click', function(event) {
+    menuBtn.on('click', event => {
         event.preventDefault();
         menu.toggleClass('header__menu_active');
     });
 
-})
+    // Нажатие на кнопку выпадающего меню
+    menuBtn.on('click', () => {
+        menuBtn.toggleClass('header__menu-btn_active')
+    });
+
+});

@@ -447,15 +447,13 @@ button:hover {
 
 .header {
   min-height: 90px;
+  padding-top: 20px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .header__logo {
@@ -602,11 +600,31 @@ button:hover {
   display: none;
 }
 
+.header__menu-btn_active .header__menu-line {
+  margin-bottom: 0;
+}
+
+.header__menu-btn_active .header__menu-line:nth-child(1) {
+  -webkit-transform: translateY(1px) rotate(45deg);
+          transform: translateY(1px) rotate(45deg);
+}
+
+.header__menu-btn_active .header__menu-line:nth-child(2) {
+  display: none;
+}
+
+.header__menu-btn_active .header__menu-line:nth-child(3) {
+  -webkit-transform: translateY(-1px) rotate(-45deg);
+          transform: translateY(-1px) rotate(-45deg);
+}
+
 .header__menu-line {
   width: 23px;
   height: 2px;
   margin-bottom: 3px;
   background-color: #000000;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .header__menu-line:last-child {
@@ -672,6 +690,7 @@ button:hover {
 @media (max-width: 767px) {
   .header {
     min-height: 60px;
+    padding-top: 5px;
   }
   .header-contacts {
     max-width: 140px;

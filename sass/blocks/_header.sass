@@ -1,11 +1,10 @@
 .header
     min-height: 90px
-    // padding-top: 7px
+    padding-top: 20px
     width: 100%
     max-width: 1440px
     margin: 0 auto
     display: flex
-    align-items: center
     &__logo
         min-width: 342px
         height: 50px
@@ -79,11 +78,21 @@
             justify-content: center
             align-items: center
             display: none
+            &_active
+                .header__menu-line
+                    margin-bottom: 0
+                    &:nth-child(1)
+                        transform: translateY(1px) rotate(45deg)
+                    &:nth-child(2)
+                        display: none
+                    &:nth-child(3)
+                        transform: translateY(-1px) rotate(-45deg)
         &-line
             width: 23px
             height: 2px
             margin-bottom: 3px
             background-color: $black
+            transition: .1s
             &:last-child
                 margin-bottom: 0
         &-list
@@ -120,7 +129,7 @@
 @media (max-width: 767px)
     .header
         min-height: 60px
-        // padding-top: 3px
+        padding-top: 5px
         &-contacts
             max-width: 140px
             &__social-block
