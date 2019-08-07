@@ -760,18 +760,6 @@ button:hover {
   min-height: 100%;
 }
 
-.hero__bg-text {
-  display: none;
-  position: absolute;
-}
-
-.hero__bg-img {
-  display: none;
-  margin-top: -70px;
-  min-width: 1440px;
-  min-height: 100%;
-}
-
 .hero__bg-min {
   display: none;
   position: absolute;
@@ -795,6 +783,7 @@ button:hover {
 
 .hero__text-title {
   font-size: 6.0rem;
+  font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -1.5px;
@@ -1422,7 +1411,7 @@ button:hover {
   margin-right: 0;
 }
 
-.team__block img {
+.team__block-img {
   max-width: 350px;
   max-height: 350px;
 }
@@ -1535,8 +1524,13 @@ button:hover {
   .team__text-title-white {
     color: #ffffff;
   }
+  .team__img-block {
+    position: relative;
+    z-index: -1;
+  }
   .team__btn {
-    top: 245px;
+    top: auto;
+    bottom: 45px;
     left: auto;
     right: 30px;
     width: 225px;
