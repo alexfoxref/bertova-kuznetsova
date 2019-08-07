@@ -447,7 +447,6 @@ button:hover {
 
 .header {
   min-height: 90px;
-  padding-top: 7px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -673,7 +672,6 @@ button:hover {
 @media (max-width: 767px) {
   .header {
     min-height: 60px;
-    padding-top: 3px;
   }
   .header-contacts {
     max-width: 140px;
