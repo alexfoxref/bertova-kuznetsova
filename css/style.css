@@ -386,7 +386,7 @@ button:hover {
 
 @media (max-width: 1200px) {
   .content {
-    margin-right: 20px;
+    margin-right: 65px;
   }
   .side-title {
     min-width: 65px;
@@ -415,6 +415,7 @@ button:hover {
   }
   .content {
     margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -1511,8 +1512,8 @@ button:hover {
     margin-bottom: 50px;
   }
   .team__block {
-    -ms-flex-preferred-size: 680px;
-        flex-basis: 680px;
+    -ms-flex-preferred-size: 630px;
+        flex-basis: 630px;
     margin-bottom: 50px;
     margin-right: 0;
   }
