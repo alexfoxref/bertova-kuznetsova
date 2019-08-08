@@ -22,13 +22,18 @@
             color: $secondary-text
             font-size: 1.6rem
             text-transform: uppercase
-            margin-top: 15px
             margin-bottom: 0
+            margin-top: 0
             +bold
         &-text
-            margin-top: 35px
+            margin-top: 20px
             font-size: 1.4rem
             line-height: 20px
+            align-self: flex-end
+    &__text
+        margin-top: 15px
+        display: flex
+        flex-direction: column
 
 @media (max-width: 991px)
     .blog
