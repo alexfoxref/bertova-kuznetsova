@@ -766,10 +766,12 @@ button:hover {
 .hero__bg {
   position: absolute;
   top: 1px;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -782,6 +784,7 @@ button:hover {
 }
 
 .hero__bg-notext {
+  width: 100%;
   margin-top: -70px;
   min-width: 1440px;
   min-height: 100%;
@@ -1211,10 +1214,12 @@ button:hover {
   position: absolute;
   z-index: 6;
   top: 1px;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1227,6 +1232,7 @@ button:hover {
 }
 
 .consult__bg-img {
+  width: 100%;
   min-width: 1440px;
   min-height: 100%;
 }
@@ -1378,6 +1384,7 @@ button:hover {
 
 .blog__block-text {
   margin-top: 20px;
+  margin-bottom: 0;
   font-size: 1.4rem;
   line-height: 20px;
   -ms-flex-item-align: end;
@@ -1422,6 +1429,7 @@ button:hover {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin: 0;
+    margin-bottom: 25px;
   }
   .blog__block img {
     width: 100%;
@@ -1617,13 +1625,19 @@ button:hover {
   fill: #ffffff;
 }
 
+.contacts__icon:hover {
+  fill: #c9d5e4;
+}
+
 .contacts__bg {
   position: absolute;
   top: 1px;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1636,6 +1650,7 @@ button:hover {
 }
 
 .contacts__bg-img {
+  width: 100%;
   margin-top: 50px;
   min-width: 1440px;
   min-height: 100%;
@@ -1873,7 +1888,6 @@ button:hover {
 
 .footer {
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   background-color: #3b5373;
   color: #ffffff;

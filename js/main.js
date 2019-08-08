@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         text.style.marginTop = `${titleMaxHeight + marginText - blogTitlesHeights[index]}px`
     });
 
+    // Функция плавной прокрутки к элементу element
+    const lightScroll = (element) => {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+
     // Функция для прокрутки экрана к секции по клику на ссылки в меню menu
     const scrollScreen = (menu) => {
         const menuLinks = menu.querySelectorAll('a');
@@ -46,23 +54,40 @@ document.addEventListener('DOMContentLoaded', () => {
     
             menuLinks.forEach(link => {
                 if (target === link) {
-                    document.querySelector(link.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                    lightScroll(document.querySelector(link.getAttribute('href')));
                 }
             });
         });
     };
 
-    // Плавная прокрутка по клику на ссылки в меню в шапке и в подвале
+    // Плавная прокрутка по клику на ссылки в меню в шапке, подвале, на кнопку Заказа консультации на заглавном баннере
     const headerNavMenu = document.querySelector('.header-nav__menu'),
         headerMenuList = document.querySelector('.header__menu-list'),
-        footerNavMenu = document.querySelector('.footer__nav-menu');
+        footerNavMenu = document.querySelector('.footer__nav-menu'),
+        consultBtnBlock = document.querySelector('.hero .content');
 
     scrollScreen(headerNavMenu);
     scrollScreen(headerMenuList);
     scrollScreen(footerNavMenu);
+    scrollScreen(consultBtnBlock);
+
+    // Плавная прокрутка к следующей секции mainSections при клике на кнопки sideTitleBtns в боковой панели (последняя кнопка ведет к шапке сайта)
+    const sideTitleBtns = document.querySelectorAll('.side-title__btn'),
+        mainSections = document.querySelectorAll('section');
+
+    document.addEventListener('click', event => {
+        const target = event.target;
+
+        sideTitleBtns.forEach((btn, index) => {
+            if (target === btn) {
+                if ( index !== (sideTitleBtns.length - 1) ) {
+                    lightScroll(mainSections[index + 1]);
+                } else {
+                    lightScroll(document.querySelector('header'));
+                }
+            }
+        });
+    });
     
 
 });
