@@ -688,6 +688,15 @@ button:hover {
   }
 }
 
+@media (max-width: 991px) {
+  .header__menu li a {
+    font-size: 12px;
+  }
+  .header-nav li a {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 767px) {
   .header {
     min-height: 60px;
@@ -732,6 +741,17 @@ button:hover {
     max-width: 10px;
     max-height: 10px;
   }
+  .header__menu-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__menu-list li {
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -749,17 +769,6 @@ button:hover {
             transform: scale(0.4);
     margin-left: -110px;
     margin-right: -110px;
-  }
-  .header__menu-list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .header__menu-list li {
-    margin-bottom: 10px;
-    margin-right: 0;
-    text-align: center;
   }
 }
 
@@ -811,6 +820,8 @@ button:hover {
   position: absolute;
   top: 415px;
   left: 250px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .hero__text {
@@ -1006,6 +1017,18 @@ button:hover {
   background-color: #000000;
 }
 
+@media (max-width: 991px) {
+  .about__block {
+    font-size: 12px;
+  }
+  .about__block-title {
+    font-size: 12px;
+  }
+  .about__subtitle {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 767px) {
   .about__blocks {
     -ms-flex-wrap: wrap;
@@ -1085,6 +1108,17 @@ button:hover {
   position: relative;
 }
 
+.service__block:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 1px;
+  height: 180px;
+  background-color: #132a4a;
+}
+
 .service__block:nth-child(4):after {
   display: none;
 }
@@ -1103,17 +1137,6 @@ button:hover {
 
 .service__block:nth-child(11) {
   border-bottom: none;
-}
-
-.service__block:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 1px;
-  height: 180px;
-  background-color: #132a4a;
 }
 
 .service__block-title {
@@ -1200,12 +1223,21 @@ button:hover {
 @media (max-width: 576px) {
   .service__subtitle {
     margin-bottom: 20px;
+    font-size: 12px;
   }
   .service__blocks {
     padding: 0;
   }
+  .service__block {
+    height: 150px;
+  }
+  .service__block:after {
+    height: 140px;
+  }
   .service__block-title {
     margin: 0;
+    font-size: 13px;
+    line-height: 18px;
   }
 }
 
@@ -1295,6 +1327,8 @@ button:hover {
 
 .consult__btn {
   margin-bottom: 120px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .consult small {
@@ -1322,6 +1356,13 @@ button:hover {
 @media (max-width: 991px) {
   .consult__btn {
     margin-bottom: 40px;
+    font-size: 17px;
+  }
+  .consult__input {
+    font-size: 14px;
+  }
+  .consult small {
+    font-size: 13px;
   }
 }
 
@@ -1334,14 +1375,10 @@ button:hover {
 
 @media (max-width: 576px) {
   .consult__btn {
-    padding: 15px 25px;
+    padding: 15px 20px;
   }
   .consult small {
-    font-size: 13px;
     text-align: center;
-  }
-  .consult__input {
-    font-size: 14px;
   }
 }
 
@@ -1410,6 +1447,13 @@ button:hover {
   .blog__block {
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
+    min-height: 350px;
+  }
+  .blog__block-title {
+    font-size: 13px;
+  }
+  .blog__block-text {
+    font-size: 12px;
   }
   .blog__subtitle {
     font-size: 12px;
@@ -1552,6 +1596,15 @@ button:hover {
     font-size: 12px;
     margin-top: 10px;
   }
+  .team__text-title {
+    font-size: 12px;
+  }
+  .team__text-describe {
+    font-size: 12px;
+  }
+  .team__btn {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1607,7 +1660,6 @@ button:hover {
             justify-content: flex-end;
   }
   .team__subtitle {
-    font-size: 12px;
     margin-top: 10px;
     margin-bottom: 35px;
     padding: 0 10px;
@@ -1790,7 +1842,7 @@ button:hover {
   text-align: center;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .contacts__form-group {
@@ -1831,6 +1883,8 @@ button:hover {
   max-width: 350px;
   margin-top: 40px;
   margin-bottom: 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 @media (max-width: 1365px) {
@@ -1869,6 +1923,9 @@ button:hover {
     left: 0;
     bottom: -180px;
   }
+  .contacts__info-text {
+    font-size: 12px;
+  }
   .contacts__form-block {
     width: 100%;
     top: auto;
@@ -1876,6 +1933,18 @@ button:hover {
     left: 0;
     bottom: -610px;
     background-color: #ffffff;
+  }
+  .contacts__form-title {
+    font-size: 22px;
+  }
+  .contacts__input {
+    font-size: 14px;
+  }
+  .contacts__btn {
+    font-size: 17px;
+  }
+  .contacts small {
+    font-size: 13px;
   }
 }
 
@@ -1894,12 +1963,6 @@ button:hover {
   }
   .contacts__form-block {
     bottom: -640px;
-  }
-  .contacts__input {
-    font-size: 14px;
-  }
-  .contacts small {
-    font-size: 13px;
   }
 }
 

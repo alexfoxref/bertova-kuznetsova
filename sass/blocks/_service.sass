@@ -21,6 +21,15 @@
         align-items: center
         justify-content: space-between
         position: relative
+        &:after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            display: block
+            width: 1px
+            height: 180px
+            background-color: #132a4a
         &:nth-child(4)
             &:after
                 display: none
@@ -33,15 +42,6 @@
             border-bottom:  none
         &:nth-child(11)
             border-bottom:  none
-        &:after
-            content: ''
-            position: absolute
-            top: 0
-            right: 0
-            display: block
-            width: 1px
-            height: 180px
-            background-color: #132a4a
         &-title
             color: $secondary-text
             font-size: 2.1rem
@@ -105,8 +105,14 @@
     .service
         &__subtitle
             margin-bottom: 20px
+            font-size: 12px
         &__blocks
             padding: 0
         &__block
+            height: 150px
+            &:after
+                height: 140px
             &-title
                 margin: 0
+                font-size: 13px
+                line-height: 18px

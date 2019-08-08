@@ -126,6 +126,16 @@
             display: none
         &__menu
             display: flex
+@media (max-width: 991px)
+    .header
+        &__menu
+            li
+                a
+                    font-size: 12px
+        &-nav
+            li
+                a
+                    font-size: 12px
 @media (max-width: 767px)
     .header
         min-height: 60px
@@ -156,6 +166,13 @@
                     margin-right: 5px
                     max-width: 10px
                     max-height: 10px
+        &__menu
+            &-list
+                flex-direction: column
+                li
+                    margin-bottom: 10px
+                    margin-right: 0
+                    text-align: center
 @media (max-width: 480px)
     .header
         &__logo
@@ -168,11 +185,4 @@
             transform: scale(.4)
             margin-left: -110px
             margin-right: -110px
-        &__menu
-            &-list
-                flex-direction: column
-                li
-                    margin-bottom: 10px
-                    margin-right: 0
-                    text-align: center
                 
