@@ -7,23 +7,37 @@ const toggleClass = (element, className) => {
     }
 };
 
-// Функция определения отступов текста от заголовков в блоке Блог
-const getBlogMargin = () => {
+// Функция, устанавливающая вертикальные отступы margin между элементами групп elementsTop и elementsBottom
+const setMargin = (elementsTop, elementsBottom, margin) => {
+    let elementsTopMaxHeight = 0,
+        elementsTopHeights = [];
+
+    if (elementsTop.length === undefined) {
+        const elementsTopHeight = elementsTop.getBoundingClientRect().height;
+
+        elementsTopMaxHeight = (elementsTopHeight > elementsTopMaxHeight) ? elementsTopHeight : elementsTopMaxHeight;
+
+        elementsBottom.style.marginTop = `${elementsTopMaxHeight - elementsTopHeight + margin}px`;
+    } else {
+        elementsTop.forEach((element, index) => {
+            const elementsTopHeight = element.getBoundingClientRect().height;
+    
+            elementsTopMaxHeight = (elementsTopHeight > elementsTopMaxHeight) ? elementsTopHeight : elementsTopMaxHeight;
+            elementsTopHeights[index] = elementsTopHeight;
+        });
+
+        elementsBottom.forEach((element, index) => {
+            element.style.marginTop = `${elementsTopMaxHeight - elementsTopHeights[index] + margin}px`;
+        });
+    };
+};
+
+// Функция, устанавливающая вертикальные отступы между заголовком и текстом в карточках блока Блог
+const setBlogMargin = (margin) => {
     const blogTitles = document.querySelectorAll('.blog__block-title'),
-        blogTexts = document.querySelectorAll('.blog__block-text'),
-        marginText = 20;
-    let titleMaxHeight = 0,
-        blogTitlesHeights = [];
+        blogTexts = document.querySelectorAll('.blog__block-text');
 
-    blogTitles.forEach((title, index) => {
-        const titleHeight = title.getBoundingClientRect().height;
-        titleMaxHeight = (titleHeight > titleMaxHeight) ? titleHeight : titleMaxHeight;
-        blogTitlesHeights[index] = titleHeight;
-    });
-
-    blogTexts.forEach((text, index) => {
-        text.style.marginTop = `${titleMaxHeight + marginText - blogTitlesHeights[index]}px`
-    });
+    setMargin(blogTitles, blogTexts, margin);
 };
 
 // Функция для прокрутки экрана к секции по клику на ссылки в меню menu
@@ -60,12 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuBtn.addEventListener('click', () => {
         toggleClass(menu, 'header__menu_active');
-        toggleClass(menuBtn, 'header__menu-btn_active')
+        toggleClass(menuBtn, 'header__menu-btn_active');
     });
 
     // Отступы текста в блоге
-    getBlogMargin();
-
+    setBlogMargin(20);
 
     // Плавная прокрутка по клику на ссылки в меню в шапке, подвале, на кнопку Заказа консультации на заглавном баннере
     const headerNavMenu = document.querySelector('.header-nav__menu'),
@@ -94,6 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-    });
+    });   
     
+    // Действия при изменении размеров экрана
+    window.addEventListener('resize', () => {
+        // Удаление активного класса у кнопки выпадающего меню и меню
+        const menuBtn = document.querySelector('.header__menu-btn'),
+            menu = document.querySelector('.header__menu');
+        
+        if (menu.classList.contains('header__menu_active')) {
+            menu.classList.remove('header__menu_active');
+            menuBtn.classList.remove('header__menu-btn_active');
+        };
+    
+        // Отступы текста от заголовка в блоге
+        setBlogMargin(20);
+    });
+
 });
+

@@ -5,6 +5,7 @@
     max-width: 1440px
     margin: 0 auto
     display: flex
+    background-color: $white
     &__logo
         min-width: 342px
         height: 50px
@@ -145,12 +146,21 @@
             &__social-block
                 display: none
         &__menu
-            display: none
-            background-color: $white
+            display: flex
+            background-color: transparent
             min-width: 100%
-            z-index: 100
+            margin-top: -40px
+            z-index: -1
+            opacity: 0
+            transition: .2s
             &_active
-                display: flex
+                z-index: 0
+                opacity: 1
+                margin-top: 10px
+                .header__menu-list
+                    height: auto
+            &-list
+                height: 0
             &-btn
                 display: flex
 @media (max-width: 576px)
