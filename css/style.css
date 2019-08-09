@@ -1302,8 +1302,8 @@ button:hover {
 
 .consult__form {
   margin-top: 90px;
-  margin-bottom: 100px;
   max-width: 100%;
+  margin-bottom: 130px;
 }
 
 .consult__form-group {
@@ -1313,6 +1313,10 @@ button:hover {
   height: 30px;
   margin-top: 20px;
   position: relative;
+}
+
+.consult__form-group:nth-child(3) {
+  margin-bottom: 100px;
 }
 
 .consult__form-group img {
@@ -1339,7 +1343,6 @@ button:hover {
 }
 
 .consult__btn {
-  margin-bottom: 120px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
@@ -1368,7 +1371,6 @@ button:hover {
 
 @media (max-width: 991px) {
   .consult__btn {
-    margin-bottom: 40px;
     font-size: 17px;
   }
   .consult__input {
@@ -1377,16 +1379,29 @@ button:hover {
   .consult small {
     font-size: 13px;
   }
+  .consult__form-group:nth-child(3) {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 767px) {
   .consult__form {
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
+  }
+  .consult__form-group:nth-child(3) {
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 576px) {
+  .consult__form {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .consult__form-group:nth-child(3) {
+    margin-bottom: 40px;
+  }
   .consult__btn {
     padding: 15px 20px;
   }
