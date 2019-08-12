@@ -370,17 +370,17 @@
                 <!-- /.side-title -->
                 <div class="content">
                     <h2 class="content__title">Записаться на консультацию</h2>
-                    <form action="#" class="consult__form">
+                    <form class="consult__form">
                         <div class="consult__form-group">
-                            <input type="text" placeholder="Ваше имя" class="input consult__input">
+                            <input name="name" type="text" required placeholder="Ваше имя" class="input consult__input">
                             <img src="./img/icons/user.png" alt="user" width="19" heigh="18">
                         </div>
                         <div class="consult__form-group">
-                            <input type="text" placeholder="Ваш телефон" class="input consult__input">
+                            <input name="phone" type="tel" required placeholder="Ваш телефон" class="input consult__input">
                             <img src="./img/icons/phone.png" alt="phone" width="14" heigh="14">
                         </div>
                         <div class="consult__form-group">
-                            <input type="text" placeholder="Ваша  почта" class="input consult__input">
+                            <input name="e-mail" type="email" required placeholder="Ваша  почта" class="input consult__input">
                             <img src="./img/icons/mail.png" alt="mail" width="18" heigh="12">
                         </div>
                         <button type="submit" class="btn__primary btn__primary_mirror consult__btn">заказать бесплатную консультацию</button>
@@ -750,17 +750,17 @@
                     <!-- /.contacts__info-block -->
                     <div class="contacts__form-block">
                         <h6 class="contacts__form-title">бесплатная консультация</h6>
-                        <form action="#" class="contacts__form">
+                        <form class="contacts__form">
                             <div class="contacts__form-group">
-                                <input type="text" placeholder="Ваше имя" class="input contacts__input">
+                                <input required name="name" type="text" placeholder="Ваше имя" class="input contacts__input">
                                 <img src="./img/icons/user_black.png" alt="user" width="19" heigh="18">
                             </div>
                             <div class="contacts__form-group">
-                                <input type="text" placeholder="Ваш телефон" class="input contacts__input">
+                                <input required name="phone" type="tel" placeholder="Ваш телефон" class="input contacts__input">
                                 <img src="./img/icons/phone_black.png" alt="phone" width="14" heigh="14">
                             </div>
                             <div class="contacts__form-group">
-                                <input type="text" placeholder="Ваша  почта" class="input contacts__input">
+                                <input required name="e-mail" type="email" placeholder="Ваша  почта" class="input contacts__input">
                                 <img src="./img/icons/mail_black.png" alt="mail" width="18" heigh="12">
                             </div>
                             <button type="submit" class="btn__primary btn__primary_mirror contacts__btn">заказать</button>
@@ -910,6 +910,20 @@
         <!-- /.container -->
     </footer>
     <!-- /.footer -->
+
+    <div class="modal">
+        <div class="modal__content">
+            <!-- <div class="modal__close">&times;</div> -->
+            <!-- /.close -->
+            <!-- <h4 class="modal__title">Спасибо</h4>
+            <p class="modal__message">Ваша заявка отправлена</p>
+            <button class="btn btn__primary modal__btn">Закрыть</button> -->
+            <!-- /.btn btn__primary modal__btn -->
+        </div>
+        <!-- /.modal__content -->
+    </div>
+    <!-- /.modal -->
+
 
     <script src="./js/main.js"></script>
 </body>
