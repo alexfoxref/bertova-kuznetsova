@@ -173,6 +173,26 @@ button
         width: calc(100% - 40px)
         margin: 20px
         font-size: 16px
+.form
+    &__group
+        border-radius: 10px
+        position: relative
+        &_success
+            background-color: rgba(green, .2)
+        &_error
+            background-color: rgba(red, .2)
+        input
+            &::placeholder
+                color: $black
+.error-message
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: -12px
+    text-align: center
+    font-size: 9px
+    +light
+    color: red
 
 
 @media (max-width: 1365px)

@@ -433,6 +433,47 @@ button:hover {
   font-size: 16px;
 }
 
+.form__group {
+  border-radius: 10px;
+  position: relative;
+}
+
+.form__group_success {
+  background-color: rgba(0, 128, 0, 0.2);
+}
+
+.form__group_error {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.form__group input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.form__group input:-ms-input-placeholder {
+  color: #000000;
+}
+
+.form__group input::-ms-input-placeholder {
+  color: #000000;
+}
+
+.form__group input::placeholder {
+  color: #000000;
+}
+
+.error-message {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -12px;
+  text-align: center;
+  font-size: 9px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: red;
+}
+
 @media (max-width: 1365px) {
   .content {
     margin-right: 100px;
@@ -1370,7 +1411,6 @@ button:hover {
   max-width: 100%;
   height: 30px;
   margin-top: 20px;
-  position: relative;
 }
 
 .consult__form-group:nth-child(3) {
@@ -1933,8 +1973,8 @@ button:hover {
 
 .contacts__form-group {
   width: 100%;
-  height: 50px;
-  position: relative;
+  margin-top: 20px;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

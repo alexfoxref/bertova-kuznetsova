@@ -107,6 +107,132 @@ const scrollScreen = menu => {
     });
 };
 
+// Функция установки масок masks для формы form на основании библиотеки masksLibrary
+const masksLibrary = {
+    string: (value, maskValue, errorMessage) => {
+            const error = errorMessage || "only letters, '-' and ' '"
+            if ( !/[^A-Za-zА-Яа-яЁё\- ]/.test(value) ) {
+                return [true, '']
+            } else return [false, error]
+        },
+    length: (value, maskValue, errorMessage) => {
+            let min = [true, ''],
+                max = [true, ''];
+
+            const error = (typeof errorMessage === 'string') ? errorMessage || 'need another length' : {
+                    min: errorMessage.min || 'too short',
+                    max: errorMessage.max || 'too long'
+                },
+                errorMin = error.min || error,
+                errorMax = error.max || error;
+
+            if (maskValue.min) {
+                min = (`${value}`.length >= +maskValue.min) ? [true, ''] : [false, errorMin];
+            } else {
+                min = [true, '']
+            };
+
+            if (maskValue.max) {
+                max = (`${value}`.length <= +maskValue.max) ? [true, ''] : [false, errorMax];
+            } else {
+                max = [true, '']
+            };
+
+            if (maskValue.eq) {
+                min = (`${value}`.length >= +maskValue.eq) ? [true, ''] : [false, errorMin];
+                max = (`${value}`.length <= +maskValue.eq) ? [true, ''] : [false, errorMax];
+            };
+
+            if (!min[0]) {
+                return min
+            } else if (!max[0]) {
+                return max
+            } else {
+                return [true, '']
+            }
+        }
+};
+
+const viewMaskedField = (field, className, message) => {
+    toggleClass(field, className);
+
+    const oldMessage = field.querySelector('.error-message');
+    if (oldMessage) {
+        field.removeChild(oldMessage);
+    };
+
+    if (message) {
+        const mes = document.createElement('div');
+        mes.classList.add('error-message');
+        mes.innerHTML = `${message}`;
+        field.appendChild(mes);
+    };
+};
+
+const errorMask = (field, errorClass, successClass, errorMessage) => {
+    field.classList.remove(errorClass);
+    field.classList.remove(successClass);
+    viewMaskedField(field, errorClass, errorMessage)
+};
+
+const successMask = (field, errorClass, successClass) => {
+    field.classList.remove(errorClass);
+    field.classList.remove(successClass);
+    viewMaskedField(field, successClass, null)
+};
+
+// Функция проверки объекта на пустоту
+const isEmptyObj = (obj) => {
+    for (let key in obj)
+    {
+        return false;
+    }
+    return true;
+};
+
+const setMasks = (form, masks, classes) => {
+    let fields = form.querySelectorAll('.form__group'),
+        errors = masks.errorMessages ? masks.errorMessages : {};
+
+    const {errorClass, successClass} = classes;
+
+    form.addEventListener('change', event => {
+        const target = event.target;
+
+        for (let i = 0; i < fields.length; i++) {
+            const input = fields[i].querySelector('input'),
+                maskName = input.getAttribute('name'),
+                mask = masks[maskName];
+                
+            if (!errors.hasOwnProperty(maskName)) {
+                errors[maskName] = {}
+            };
+
+            if (target === input) {
+                if (mask && !isEmptyObj(mask)) {
+                    for (let key in mask) {
+                        if (!errors[maskName].hasOwnProperty(key)) {
+                            errors[maskName][key] = ''
+                        };
+
+                        const ans = masksLibrary[key](input.value, mask[key], errors[maskName][key]);
+
+                        if ( !ans[0] ) {
+                            errorMask(fields[i], errorClass, successClass, ans[1]);
+                            break;
+                        };
+                        successMask(fields[i], errorClass, successClass);
+                    }
+                } else {
+                    successMask(fields[i], errorClass, successClass);
+                }
+                break;
+            };
+        };
+    });
+};
+
+
 // Сервис
 
 // Адрес api (json-server)
@@ -159,7 +285,7 @@ const closeModal = () => {
 const modal = document.querySelector('.modal'),
     modalContent = document.querySelector('.modal__content');
 
-// Функция загрузки
+// Функция загрузки при отправке формы
 const getLoading = () => getStatusForm(modal, modalContent, statusMessages.loading);
 
 // Функция успешной отправки формы
@@ -268,10 +394,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });   
     
-    // Отправка форм из блоков Консультация и Контакты на url
+    // Установка масок masks для полей ввода форм
     const formConsult = document.querySelector('.consult__form'),
-        formContacts = document.querySelector('.contacts__form'),
-        url = '/contacts';
+        formContacts = document.querySelector('.contacts__form');
+    const masks = {
+        name: {
+            string: true,
+            length: {
+                min: 2,
+                max: 20
+                }
+            },
+        phone: {},
+        // email: {},
+        errorMessages : {
+            name: {
+                string: 'Имя должно состоять из букв и символов "-" и " "',
+                length: {
+                    min: 'Слишком короткое имя',
+                    max: 'Слишком длинное имя'
+                    }
+                }
+            }
+    };
+    const classes = {
+        errorClass: 'form__group_error',
+        successClass: 'form__group_success'
+    }
+
+    setMasks(formConsult, masks, classes);
+    setMasks(formContacts, masks, classes)
+    
+    // Отправка форм из блоков Консультация и Контакты на url
+    const url = '/contacts';
 
     sendForm(formConsult, url);
     sendForm(formContacts, url);
